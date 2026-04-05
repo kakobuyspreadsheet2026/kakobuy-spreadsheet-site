@@ -10,16 +10,16 @@ type PageShellProps = {
 
 export function PageShell({ eyebrow, title, description, children }: PageShellProps) {
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12 md:py-14">
-      <section className="relative overflow-hidden rounded-[2rem] border border-[#3d171f] bg-[#12090b] px-8 py-12 text-white shadow-[0_24px_80px_rgba(20,12,13,0.18)]">
+    <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-8 md:gap-10 md:px-6 md:py-14">
+      <section className="relative overflow-hidden rounded-[1.5rem] border border-[#3d171f] bg-[#12090b] px-5 py-8 text-white shadow-[0_24px_80px_rgba(20,12,13,0.18)] md:rounded-[2rem] md:px-8 md:py-12">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(190,24,93,0.28),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.05),transparent_38%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent_62%)]" />
         <div className="absolute -right-10 top-12 h-40 w-40 rounded-full border border-white/8" />
         <div className="relative z-10">
           {eyebrow ? (
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-rose-200">{eyebrow}</p>
           ) : null}
-          <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-5xl">{title}</h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-white/75">{description}</p>
+          <h1 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">{title}</h1>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-white/75 md:text-lg md:leading-8">{description}</p>
         </div>
       </section>
       {children}
@@ -45,7 +45,7 @@ export function EditorialHero({
   cards: Array<{ eyebrow: string; title: string; description: string; href: string; hrefLabel: string }>;
 }) {
   return (
-    <section className="relative overflow-visible rounded-[2rem] border border-[#3d171f] bg-[#12090b] px-8 py-10 text-white shadow-[0_24px_80px_rgba(20,12,13,0.2)] md:px-10 md:py-14">
+    <section className="relative overflow-visible rounded-[1.5rem] border border-[#3d171f] bg-[#12090b] px-5 py-8 text-white shadow-[0_24px_80px_rgba(20,12,13,0.2)] md:rounded-[2rem] md:px-10 md:py-14">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(190,24,93,0.32),transparent_28%),linear-gradient(125deg,rgba(255,255,255,0.06),transparent_35%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_60%)]" />
       <div className="absolute -right-16 top-10 h-52 w-52 rounded-full border border-white/8" />
       <div className="absolute right-20 top-20 h-28 w-28 rounded-full border border-white/8" />
@@ -53,8 +53,8 @@ export function EditorialHero({
       <div className="relative z-10">
         <div className="max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-200">{eyebrow}</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-6xl">{title}</h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-white/75">{description}</p>
+          <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-white md:text-6xl">{title}</h1>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-white/75 md:text-lg md:leading-8">{description}</p>
         </div>
         <div className="mt-6 flex flex-wrap gap-2">
           {badges.map((item) => (
@@ -76,7 +76,7 @@ export function EditorialHero({
             </div>
           ))}
         </div>
-        <div className="mt-10 grid gap-4 md:mb-[-4.5rem] md:grid-cols-5 md:translate-y-8">
+        <div className="mt-8 grid gap-4 md:mb-[-4.5rem] md:grid-cols-5 md:translate-y-8">
           {cards.map((card, index) => {
             const featured = index === 2;
 
@@ -86,8 +86,8 @@ export function EditorialHero({
               href={card.href}
               className={
                 featured
-                  ? "flex min-h-[20rem] h-full flex-col rounded-2xl border border-rose-300 bg-gradient-to-b from-[#7f1d1d] to-[#3b0a10] px-5 py-5 text-white shadow-[0_24px_50px_rgba(20,12,13,0.26)] transition hover:-translate-y-0.5"
-                  : "flex min-h-[20rem] h-full flex-col rounded-2xl border border-[#e7d6d8] bg-[#fff8f8] px-5 py-5 text-slate-900 shadow-[0_20px_40px_rgba(20,12,13,0.14)] transition hover:-translate-y-0.5 hover:border-rose-300"
+                  ? "flex min-h-[14rem] h-full flex-col rounded-2xl border border-rose-300 bg-gradient-to-b from-[#7f1d1d] to-[#3b0a10] px-5 py-5 text-white shadow-[0_24px_50px_rgba(20,12,13,0.26)] transition hover:-translate-y-0.5 md:min-h-[20rem]"
+                  : "flex min-h-[14rem] h-full flex-col rounded-2xl border border-[#e7d6d8] bg-[#fff8f8] px-5 py-5 text-slate-900 shadow-[0_20px_40px_rgba(20,12,13,0.14)] transition hover:-translate-y-0.5 hover:border-rose-300 md:min-h-[20rem]"
               }
             >
               <p className={featured ? "text-[11px] font-semibold uppercase tracking-[0.16em] text-rose-100" : "text-[11px] font-semibold uppercase tracking-[0.16em] text-rose-700"}>
@@ -184,8 +184,8 @@ export function Section({
 }) {
   const sectionClassName =
     tone === "dark"
-      ? "rounded-3xl border border-[#3d171f] bg-[#12090b] px-8 py-8 text-white shadow-[0_24px_80px_rgba(20,12,13,0.16)]"
-      : "rounded-3xl border border-rose-100 bg-white px-8 py-8 shadow-[0_14px_40px_rgba(74,22,33,0.05)]";
+      ? "rounded-[1.5rem] border border-[#3d171f] bg-[#12090b] px-5 py-6 text-white shadow-[0_24px_80px_rgba(20,12,13,0.16)] md:rounded-3xl md:px-8 md:py-8"
+      : "rounded-[1.5rem] border border-rose-100 bg-white px-5 py-6 shadow-[0_14px_40px_rgba(74,22,33,0.05)] md:rounded-3xl md:px-8 md:py-8";
   const titleClassName = tone === "dark" ? "text-2xl font-semibold text-white" : "text-2xl font-semibold text-slate-950";
   const introClassName = tone === "dark" ? "mt-3 max-w-3xl text-white/70" : "mt-3 max-w-3xl text-slate-700";
 
@@ -329,7 +329,7 @@ export function SpreadsheetPreview({
   }>;
 }) {
   return (
-    <section className="rounded-3xl border border-rose-100 bg-white px-8 py-8 shadow-sm">
+    <section className="rounded-[1.5rem] border border-rose-100 bg-white px-5 py-6 shadow-sm md:rounded-3xl md:px-8 md:py-8">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h2 className="text-2xl font-semibold text-slate-950">{title}</h2>
@@ -340,25 +340,27 @@ export function SpreadsheetPreview({
         </div>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-        <div className="grid grid-cols-[1.3fr_1fr_1fr_1fr] bg-[#12090b] px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-          <div>Search</div>
-          <div>Need</div>
-          <div>Open First</div>
-          <div>Then Check</div>
-        </div>
-        <div className="divide-y divide-slate-200">
-          {rows.map((row) => (
-            <div
-              key={`${row.keyword}-${row.bestPage}`}
-              className="grid grid-cols-[1.3fr_1fr_1fr_1fr] gap-4 bg-white px-5 py-4 text-sm text-slate-700"
-            >
-              <div className="font-semibold text-slate-950">{row.keyword}</div>
-              <div>{row.intent}</div>
-              <div>{row.bestPage}</div>
-              <div>{row.nextStep}</div>
-            </div>
-          ))}
+      <div className="mt-6 overflow-x-auto">
+        <div className="min-w-[42rem] overflow-hidden rounded-2xl border border-slate-200">
+          <div className="grid grid-cols-[1.3fr_1fr_1fr_1fr] bg-[#12090b] px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-white">
+            <div>Search</div>
+            <div>Need</div>
+            <div>Open First</div>
+            <div>Then Check</div>
+          </div>
+          <div className="divide-y divide-slate-200">
+            {rows.map((row) => (
+              <div
+                key={`${row.keyword}-${row.bestPage}`}
+                className="grid grid-cols-[1.3fr_1fr_1fr_1fr] gap-4 bg-white px-5 py-4 text-sm text-slate-700"
+              >
+                <div className="font-semibold text-slate-950">{row.keyword}</div>
+                <div>{row.intent}</div>
+                <div>{row.bestPage}</div>
+                <div>{row.nextStep}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -443,32 +445,34 @@ export function FindsSurface({
   }>;
 }) {
   return (
-    <section className="rounded-3xl border border-rose-100 bg-white px-8 py-8 shadow-sm">
+    <section className="rounded-[1.5rem] border border-rose-100 bg-white px-5 py-6 shadow-sm md:rounded-3xl md:px-8 md:py-8">
       <h2 className="text-2xl font-semibold text-slate-950">{title}</h2>
       <p className="mt-3 max-w-3xl text-slate-700">{description}</p>
-      <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-        <div className="grid grid-cols-[.9fr_1fr_1.4fr_1fr] bg-rose-50 px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-800">
-          <div>Pick</div>
-          <div>Type</div>
-          <div>Why Open It</div>
-          <div>Go To</div>
-        </div>
-        <div className="divide-y divide-slate-200">
-          {rows.map((row) => (
-            <div
-              key={`${row.slot}-${row.category}-${row.nextHref}`}
-              className="grid grid-cols-[.9fr_1fr_1.4fr_1fr] gap-4 px-5 py-4 text-sm text-slate-700 odd:bg-white even:bg-rose-50/30"
-            >
-              <div className="font-semibold text-slate-950">{row.slot}</div>
-              <div>{row.category}</div>
-              <div>{row.angle}</div>
-              <div>
-                <Link href={row.nextHref} className="font-semibold text-slate-950 hover:text-rose-800">
-                  {row.nextLabel}
-                </Link>
+      <div className="mt-6 overflow-x-auto">
+        <div className="min-w-[38rem] overflow-hidden rounded-2xl border border-slate-200">
+          <div className="grid grid-cols-[.9fr_1fr_1.4fr_1fr] bg-rose-50 px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-800">
+            <div>Pick</div>
+            <div>Type</div>
+            <div>Why Open It</div>
+            <div>Go To</div>
+          </div>
+          <div className="divide-y divide-slate-200">
+            {rows.map((row) => (
+              <div
+                key={`${row.slot}-${row.category}-${row.nextHref}`}
+                className="grid grid-cols-[.9fr_1fr_1.4fr_1fr] gap-4 px-5 py-4 text-sm text-slate-700 odd:bg-white even:bg-rose-50/30"
+              >
+                <div className="font-semibold text-slate-950">{row.slot}</div>
+                <div>{row.category}</div>
+                <div>{row.angle}</div>
+                <div>
+                  <Link href={row.nextHref} className="font-semibold text-slate-950 hover:text-rose-800">
+                    {row.nextLabel}
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

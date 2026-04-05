@@ -38,7 +38,7 @@ export function SiteHeader({ locale }: { locale: SupportedLocale }) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#12090b]/95 text-white backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-5 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-6">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 md:px-6 md:py-5 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-6">
         <div className="flex items-center justify-between gap-4">
           <Link href={withLocalePath(locale, "/")} className="flex items-center gap-3">
             <Image src="/kakobuy-logo.png" alt="Kakobuy" width={152} height={40} className="h-8 w-auto md:h-9" priority />
@@ -49,9 +49,9 @@ export function SiteHeader({ locale }: { locale: SupportedLocale }) {
           </div>
         </div>
 
-        <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70 lg:min-w-0 lg:flex-nowrap lg:justify-center lg:gap-3">
+        <nav className="flex flex-wrap items-center gap-3 text-xs text-white/70 sm:text-sm lg:min-w-0 lg:flex-nowrap lg:justify-center lg:gap-3">
           {primaryNavigation.map((item) => (
-            <Link key={item.href} href={withLocalePath(locale, item.href)} className="hover:text-white">
+            <Link key={item.href} href={withLocalePath(locale, item.href)} className="whitespace-nowrap hover:text-white">
               {item.label[locale]}
             </Link>
           ))}
@@ -60,7 +60,7 @@ export function SiteHeader({ locale }: { locale: SupportedLocale }) {
               <span>{getCategoriesMenuLabel(locale)}</span>
               <span className="text-[10px] text-white/55 transition group-open:rotate-180">v</span>
             </summary>
-            <div className="absolute left-0 top-full z-[70] mt-3 w-56 overflow-hidden rounded-2xl border border-rose-200 bg-[#fff7f8] p-2 text-slate-900 shadow-[0_24px_60px_rgba(22,10,14,0.28)]">
+            <div className="absolute left-0 top-full z-[70] mt-3 w-48 overflow-hidden rounded-2xl border border-rose-200 bg-[#fff7f8] p-2 text-slate-900 shadow-[0_24px_60px_rgba(22,10,14,0.28)] sm:w-56">
               {categories.map((category) => (
                 <Link
                   key={category.slug}
@@ -76,7 +76,7 @@ export function SiteHeader({ locale }: { locale: SupportedLocale }) {
             href={siteConfig.primaryCta.href}
             trackingLabel={siteConfig.primaryCta.label[locale]}
             trackingLocation="header"
-            className="shrink-0 rounded-full border border-rose-400/40 bg-rose-800 px-4 py-2 text-white transition hover:bg-rose-700"
+            className="inline-flex w-full shrink-0 items-center justify-center rounded-full border border-rose-400/40 bg-rose-800 px-4 py-2 text-white transition hover:bg-rose-700 sm:w-auto"
           >
             {siteConfig.primaryCta.label[locale]}
           </TrackedLink>
@@ -93,7 +93,7 @@ export function SiteHeader({ locale }: { locale: SupportedLocale }) {
 export function SiteFooter({ locale }: { locale: SupportedLocale }) {
   return (
     <footer className="border-t border-white/10 bg-[#12090b] text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.5fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-10 md:grid-cols-[1.5fr_1fr_1fr] md:px-6 md:py-12">
         <div>
           <Image src="/kakobuy-logo.png" alt="Kakobuy" width={176} height={46} className="h-10 w-auto" />
           <p className="mt-4 text-xs font-medium uppercase tracking-[0.22em] text-white/45">Best Picks</p>

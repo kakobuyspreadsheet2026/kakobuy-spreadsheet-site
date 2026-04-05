@@ -1993,6 +1993,13 @@ export function CategoryPageView({
   const beforePayingGuide = guides.find(
     (guide) => guide.slug === "what-to-check-before-paying-on-kakobuy",
   );
+  const visibleRelatedGuides = isShoesPage
+    ? relatedGuides.filter(
+        (guide) =>
+          guide.slug !== "kakobuy-qc-guide" &&
+          guide.slug !== "what-to-check-before-paying-on-kakobuy",
+      )
+    : relatedGuides;
 
   return (
     <>
@@ -2189,7 +2196,7 @@ export function CategoryPageView({
                 />
               </>
             )}
-            {relatedGuides.map((guide) => (
+            {visibleRelatedGuides.map((guide) => (
               <LinkCard
                 key={guide.slug}
                 href={getGuideHref(locale, guide.slug)}
