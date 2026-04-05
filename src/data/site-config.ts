@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Kakobuy Spreadsheet 2026",
   description:
     "Browse better Kakobuy picks with category shortcuts, QC help, shipping answers, and cleaner next steps.",
-  domain: "https://kakobuyspreadsheet.com",
+  domain: "https://kakobuyai.com",
   socialImagePath: "/opengraph-image",
   independenceNotice: {
     en: "Not the official Kakobuy site.",
