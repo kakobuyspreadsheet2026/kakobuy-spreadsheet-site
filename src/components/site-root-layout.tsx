@@ -13,6 +13,11 @@ export const siteMetadata: Metadata = {
     description:
       "Find better Kakobuy picks with category shortcuts, QC help, shipping answers, and cleaner next steps.",
   }),
+  icons: {
+    icon: "/tab-k-logo.png",
+    shortcut: "/tab-k-logo.png",
+    apple: "/tab-k-logo.png",
+  },
   verification: process.env.GOOGLE_SITE_VERIFICATION
     ? {
         google: process.env.GOOGLE_SITE_VERIFICATION,
